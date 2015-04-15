@@ -1,0 +1,18 @@
+[Unit]
+Description=Strider Continuous Integration & Deployment Server
+
+[Service]
+Type=simple
+SyslogIdentifier=strider
+User=<%= node['strider']['user']['username'] %>
+PIDFile=/var/run/strider.pid
+WorkingDirectory=<%= node['strider']['user']['home'] %>
+TimeoutStartSec=600
+EnvironmentFile=<%= node['strider']['user']['home'] %>/env
+
+ExecStart=/usr/bin/strider
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -QUIT $MAINPID
+
+[Install]
+WantedBy=multi-user.target

@@ -8,16 +8,36 @@ describe 'strider::default' do
     # stub_data_bag_item_from_file 'some_data_bag', 'some_item'
   end
 
-  # context 'in case of foo' do
-  #   let(:chef_run) do
-  #     ChefSpec::SoloRunner.new do |node|
-  #       # node.set['some_attribute'] = {}
-  #     end.converge(described_recipe)
-  #   end
+  let(:chef_run) do
+    ChefSpec::SoloRunner.new do |node|
+      # node.set['some_attribute'] = {}
+    end.converge(described_recipe)
+  end
 
-  #   it 'should include bar' do
-  #     expect(chef_run).to include_recipe 'bar'
-  #   end
+  it 'should create user' do
+    expect(chef_run).to create_user 'strider'
+  end
 
-  # end
+  describe 'python2' do
+    it 'should be installed from package' do
+      expect(chef_run).to install_package 'python2'
+    end
+  end
+
+  describe 'nodejs' do
+    it 'should be installed from package' do
+      expect(chef_run).to install_package 'nodejs'
+    end
+  end
+
+  describe 'templates' do
+    it 'should create the "strider.service" unit' do
+      expect(chef_run).to render_file('/etc/systemd/system/strider.service')
+    end
+
+    it 'should create the "env" configuration file' do
+      expect(chef_run).to render_file('/var/lib/strider/env')
+    end
+  end
+
 end
