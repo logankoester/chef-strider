@@ -18,6 +18,13 @@ elsif node['strider']['from'] == 'package'
   include_recipe 'strider::install_package'
 end
 
+directory strider_user['home'] do
+  owner 'strider'
+  group 'strider'
+  mode '0775'
+  recursive true
+end
+
 # Start and enable systemd or supervisor service
 if supervisor
   supervisor_service 'strider' do
