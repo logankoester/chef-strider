@@ -1,6 +1,9 @@
 strider_user = node['strider']['user']
 supervisor = node['strider']['supervisor']
 
+# Install prerequisites if missing
+package('git'){ action :install }
+
 # Create user account
 user strider_user['username'] do
   manage_home
