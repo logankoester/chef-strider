@@ -8,6 +8,3 @@ default['strider'] = {
   },
   environment: {}
 }
-
-default['strider']['environment']['NPM_CONFIG_CACHE'] =
-  '/usr/lib/node_modules/.npm'
