@@ -1,6 +1,6 @@
-guard 'foodcritic', :cli => '--epic-fail any', cookbook_paths: '.' do
-  watch(%r{.*\.rb})
-  watch(%r{.*\.erb})
+guard 'foodcritic', cli: '--epic-fail any', cookbook_paths: '.' do
+  watch(/.*\.rb/)
+  watch(/.*\.erb/)
 end
 
 guard 'rspec', cmd: 'bundle exec rspec' do

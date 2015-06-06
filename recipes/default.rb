@@ -2,7 +2,7 @@ strider_user = node['strider']['user']
 supervisor = node['strider']['supervisor']
 
 # Install prerequisites if missing
-package('git'){ action :install }
+package('git') { action :install }
 
 # Create user account
 user strider_user['username'] do
@@ -52,7 +52,7 @@ else
 
   service 'strider' do
     provider Chef::Provider::Service::Systemd
-    supports :status => true, :restart => true, :reload => true
+    supports status: true, restart: true, reload: true
     action [:start, :enable]
   end
 

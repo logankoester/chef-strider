@@ -5,4 +5,4 @@ execute 'sync_packages' do
   action :run
 end
 
-package('strider'){ action :install }
+package('strider') { action :install }
