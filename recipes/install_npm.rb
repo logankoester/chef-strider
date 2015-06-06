@@ -1,6 +1,7 @@
 # Install strider globally via npm
 
 package('nodejs'){ action :install }
+package('npm'){ action :install }
 package('python2'){ action :install }
 
 execute 'set_python' do
