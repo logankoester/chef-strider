@@ -1,7 +1,7 @@
 strider_user = node['strider']['user']
 supervisor = node['strider']['supervisor']
 
-node['strider']['environment']['NPM_CONFIG_CACHE'] =
+node.normal['strider']['environment']['NPM_CONFIG_CACHE'] =
   File.join(strider_user['home'], '.npm')
 
 # Install prerequisites if missing
