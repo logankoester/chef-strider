@@ -6,7 +6,6 @@ package('git'){ action :install }
 
 # Create user account
 user strider_user['username'] do
-  manage_home
   home strider_user['home']
   system true
   action :create
