@@ -7,5 +7,6 @@ default['strider'] = {
     home: '/usr/lib/node_modules/strider'
   },
   environment: {
+    'NPM_CONFIG_CACHE': '/usr/lib/node_modules/.npm'
   }
 }
