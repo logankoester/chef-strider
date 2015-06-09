@@ -6,6 +6,7 @@ node.normal['strider']['environment']['NPM_CONFIG_CACHE'] =
 
 # Install prerequisites if missing
 package('git') { action :install }
+package('openssh') { action :install }
 
 # Create user account
 user strider_user['username'] do
