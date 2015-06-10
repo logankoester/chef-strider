@@ -29,6 +29,13 @@ directory strider_user['home'] do
   recursive true
 end
 
+directory File.join(strider_user['home'], 'node_modules') do
+  owner 'strider'
+  group 'strider'
+  mode '0775'
+  recursive true
+end
+
 # Start and enable systemd or supervisor service
 if supervisor
   supervisor_service 'strider' do
