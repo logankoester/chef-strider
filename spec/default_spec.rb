@@ -24,7 +24,7 @@ describe 'strider::default' do
     end
 
     it 'should create the "env" configuration file' do
-      expect(chef_run).to render_file('/var/lib/strider/env')
+      expect(chef_run).to render_file('/usr/lib/node_modules/strider/env')
     end
   end
 end

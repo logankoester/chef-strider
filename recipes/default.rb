@@ -4,6 +4,13 @@ supervisor = node['strider']['supervisor']
 node.normal['strider']['environment']['NPM_CONFIG_CACHE'] =
   File.join(strider_user['home'], '.npm')
 
+node.normal['strider']['environment']['STRIDER_CLONE_DEST'] =
+  File.join(strider_user['home'], '.strider')
+
+# Ensure that child process receives the correct $HOME
+node.normal['strider']['environment']['HOME'] =
+  File.join(strider_user['home'])
+
 # Install prerequisites if missing
 package('git') { action :install }
 package('openssh') { action :install }
