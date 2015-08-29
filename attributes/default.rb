@@ -1,6 +1,6 @@
 default['strider'] = {
   from: 'package', # or 'npm'
-  version: '1.6.6',
+  version: '1.7.2',
   supervisor: false, # use supervisor instead of systemd?
   user: {
     username: 'strider',
