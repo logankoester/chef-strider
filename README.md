@@ -1,5 +1,4 @@
 # strider cookbook
-> TODO: Enter the cookbook description here.
 
 [![Build Status](http://ci.ldk.io/logankoester/chef-strider/badge)](http://ci.ldk.io/logankoester/chef-strider/)
 [![Gittip](http://img.shields.io/gittip/logankoester.png)](https://www.gittip.com/logankoester/)
